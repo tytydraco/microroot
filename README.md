@@ -9,7 +9,7 @@ A lightweight glibc rootfs for containers.
 - Binutils v2.34
 - Built with GCC 10, Link Time Optimization and Graphite
 - No default init system
-- 1.9 MB compressed XZ tarball
+- 1.6 MB compressed XZ tarball
 
 # Philosophy
 MicroRoot is heavily inspired by [Alpine Linux](https://alpinelinux.org/), a
