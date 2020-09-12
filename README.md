@@ -40,6 +40,11 @@ Now, we need to tell Buildroot to use our configuration file. Type `make
 microroot_defconfig`. Since MicroRoot uses a savedefconfig, it should be
 compatible across Buildroot versions.
 
+NOTE: The default build target for MicroRoot is x86_64 and corei7. If your
+target device requirements differ, head down to [Additional Configuration](#Additional Configuration).
+In the menuconfig menu, navigate to Target options and adjust Target
+Architecture and Target Architecture Variant to fit your needs.
+
 Finally, it is time to build MicroRoot. Type `make` to start the build process.
 This can take anywhere from ten minutes to an hour depending on the speed of
 your build system.
