@@ -60,6 +60,9 @@ configuration menu. Here, you can enable packages for guest system that were not
 initially compiled into MicroRoot. Once finished, save your changes and type
 `make` to start your build.
 
+NOTE: For subsequent builds, run `make clean` between builds if you remove an
+option. Otherwise, ccache will not remove the option from your final build.
+
 # License
 MicroRoot is licensed under GPLv3, which includes the following permissions:
 
