@@ -54,3 +54,13 @@ to tweak the config file. Type `make menuconfig` to enter the Buildroot
 configuration menu. Here, you can enable packages for guest system that were not
 initially compiled into MicroRoot. Once finished, save your changes and type
 `make` to start your build.
+
+# License
+MicroRoot is licensed under GPLv3, which includes the following permissions:
+
+- Ability to use this software for any purpose
+- Ability to change the software
+- Ability to share the software
+- Ability to share changes made to the software
+
+You can read more about GPLv3 [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
