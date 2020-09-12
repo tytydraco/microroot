@@ -31,6 +31,12 @@ managers.
 
 `apt-get install bc cpio curl g++ gcc make python3 rsync unzip wget`
 
+## Build Script Method
+MicroRoot comes with a build script to automate the build process of MicroRoot.
+Simple clone the [build script](https://raw.githubusercontent.com/tytydraco/microroot/master/build.sh)
+and run it with `./build.sh`. The script will handle everything for you.
+
+## Manual Method
 MicroRoot is built using [Buildroot](https://buildroot.org/), a tool for
 generating rootfs images for embedded systems. The first step is to download the
 latest [Buildroot tarball](https://buildroot.org/download.html) and extract it
