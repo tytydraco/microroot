@@ -18,7 +18,7 @@ distribution built against BusyBox and musl as the C library. As a result,
 Alpine Linux provides rootfs tarballs for a variety of architectures at around
 2.6 MB when GZIP compressed. Unfortunately, the use of musl as the C library
 breaks proprietary binaries that were compiled against glibc, resulting in a
-less portable container. MicroRoot attempts to be match the benefits of Alpine
+less portable container. MicroRoot attempts to match the benefits of Alpine
 Linux, being lightweight and compressed, while also compiling against glibc.
 The finished product is a portable container at almost the same size as Alpine
 Linux, with the ability to execute glibc binaries.
@@ -63,7 +63,7 @@ message, your MicroRoot tarball should be located at
 # Additional Configuration
 Since MicroRoot is just a custom Buildroot configuration, you have the freedom
 to tweak the config file. Type `make menuconfig` to enter the Buildroot
-configuration menu. Here, you can enable packages for guest system that were not
+configuration menu. Here, you can enable packages for system that were not
 initially compiled into MicroRoot. Once finished, save your changes and type
 `make` to start your build.
 
