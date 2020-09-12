@@ -41,7 +41,7 @@ microroot_defconfig`. Since MicroRoot uses a savedefconfig, it should be
 compatible across Buildroot versions.
 
 NOTE: The default build target for MicroRoot is x86_64 and corei7. If your
-target device requirements differ, head down to [Additional Configuration](#Additional Configuration).
+target device requirements differ, head down to [Additional Configuration](#additional-configuration).
 In the menuconfig menu, navigate to Target options and adjust Target
 Architecture and Target Architecture Variant to fit your needs.
 
