@@ -95,6 +95,12 @@ build() {
 	dbg "------------------------------"
 }
 
+# Check for required dependencies
+for dep in bc cd cpio curl g++ gcc grep make mkdir python3 rsync tar unzip wget
+do
+	! command -v "$dep" &> /dev/null && err "Unable to locate dependency $dep. Exiting."
+done
+
 # Detect manual clean command
 if [[ "$1" == "clean" ]]
 then
