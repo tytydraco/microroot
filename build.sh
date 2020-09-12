@@ -88,10 +88,11 @@ build() {
 
 	[[ $? -ne 0 ]] && err "Build failed. Exiting."
 
+	cd ..
 	local br_dir=`get_buildroot_name`
 
 	dbg "---------- FINISHED ----------"
-	dbg "./out/$br_dir/output/images/rootfs.tar.xz"
+	dbg "./out/${br_dir}output/images/rootfs.tar.xz"
 	dbg "------------------------------"
 }
 
