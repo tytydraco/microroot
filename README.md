@@ -29,7 +29,7 @@ is for apt based distributions. The exact system this was tested on was an
 Ubuntu 20.04.1 chroot. The command below can easily be adapted for other package
 managers.
 
-`apt-get install bc cpio curl g++ gcc make rsync unzip wget`
+`apt-get install bc cpio curl g++ gcc make python3 rsync unzip wget`
 
 MicroRoot is built using [Buildroot](https://buildroot.org/), a tool for
 generating rootfs images for embedded systems. The first step is to download the
