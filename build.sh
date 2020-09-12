@@ -31,9 +31,14 @@ prepare() {
 	cd ./out
 }
 
+# Return the directory name of the Buildroot
+get_buildroot_name() {
+	ls -d buildroot*/ 2> /dev/null | head -n 1
+}
+
 # Pull the latest stable Buildroot (not LTS, not snapshot)
 setup_buildroot() {
-	if [[ ! -z `ls -d buildroot*/ 2> /dev/null` ]]
+	if [[ ! -z `get_buildroot_name` ]]
 	then
 		dbg "Buildroot already exists. Skipping setup..."
 		return 0
@@ -53,7 +58,7 @@ setup_buildroot() {
 # Navigate to and enter Buildroot
 enter_buildroot() {
 	dbg "Querying for Buildroot..."
-	local br_dir=`ls -d */ | head -n 1`
+	local br_dir=`get_buildroot_name`
 
 	[[ -z "$br_dir" ]] && err "Buildroot missing. Exiting."
 
@@ -83,8 +88,10 @@ build() {
 
 	[[ $? -ne 0 ]] && err "Build failed. Exiting."
 
+	local br_dir=`get_buildroot_name`
+
 	dbg "---------- FINISHED ----------"
-	dbg "./output/images/rootfs.tar.xz"
+	dbg "./out/$br_dir/output/images/rootfs.tar.xz"
 	dbg "------------------------------"
 }
 
