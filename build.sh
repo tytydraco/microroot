@@ -5,7 +5,6 @@ cd `dirname "$0"`
 
 # Output directory for building
 OUT="./out"
-DEFCONFIG_URL="https://raw.githubusercontent.com/tytydraco/microroot/master/microroot_defconfig"
 
 # Log in red and exit
 err() {
@@ -68,8 +67,8 @@ enter_buildroot() {
 
 # Fetch microroot_defconfig
 setup_defconfig() {
-	dbg "Fetching latest MicroRoot defconfig..."
-	curl -Ls "$DEFCONFIG_URL" > configs/microroot_defconfig
+	dbg "Copying MicroRoot defconfig..."
+	cp ../../microroot_defconfig configs/microroot_defconfig
 }
 
 # Clean the buildroot directory and make config
@@ -97,7 +96,7 @@ build() {
 }
 
 # Check for required dependencies
-for dep in bc cd cpio curl g++ gcc grep make mkdir python3 rsync tar unzip wget
+for dep in bc cd cp cpio curl g++ gcc grep make mkdir python3 rsync tar unzip wget
 do
 	! command -v "$dep" &> /dev/null && err "Unable to locate dependency $dep. Exiting."
 done
