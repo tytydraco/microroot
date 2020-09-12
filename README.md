@@ -18,12 +18,19 @@ distribution built against BusyBox and musl as the C library. As a result,
 Alpine Linux provides rootfs tarballs for a variety of architectures at around
 2.6 MB when GZIP compressed. Unfortunately, the use of musl as the C library
 breaks proprietary binaries that were compiled against glibc, resulting in a
-less portable container. MicroRoot attempts to be match the benefits of Alpine
+less portable container. MicroRoot attempts to match the benefits of Alpine
 Linux, being lightweight and compressed, while also compiling against glibc.
 The finished product is a portable container at almost the same size as Alpine
 Linux, with the ability to execute glibc binaries.
 
 # Building
+You'll need some initial dependencies for building MicroRoot. The command below
+is for apt based distributions. The exact system this was tested on was an
+Ubuntu 20.04.1 chroot. The command below can easily be adapted for other package
+managers.
+
+`apt-get install bc cpio curl g++ gcc make rsync unzip wget`
+
 MicroRoot is built using [Buildroot](https://buildroot.org/), a tool for
 generating rootfs images for embedded systems. The first step is to download the
 latest [Buildroot tarball](https://buildroot.org/download.html) and extract it
@@ -56,7 +63,7 @@ message, your MicroRoot tarball should be located at
 # Additional Configuration
 Since MicroRoot is just a custom Buildroot configuration, you have the freedom
 to tweak the config file. Type `make menuconfig` to enter the Buildroot
-configuration menu. Here, you can enable packages for guest system that were not
+configuration menu. Here, you can enable packages for system that were not
 initially compiled into MicroRoot. Once finished, save your changes and type
 `make` to start your build.
 
