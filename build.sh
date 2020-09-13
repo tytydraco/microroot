@@ -17,12 +17,6 @@ dbg() {
 	echo -e " \e[92m*\e[39m $@"
 }
 
-# Clear the entire build directory
-clean() {
-	dbg "Removing Buildroot instance..."
-	rm -rf ./out
-}
-
 # Create and enter an output directory
 prepare() {
 	dbg "Preparing output directory..."
@@ -71,11 +65,14 @@ setup_defconfig() {
 	cp ../../microroot_defconfig configs/microroot_defconfig
 }
 
-# Clean the buildroot directory and make config
-prepare_buildroot() {
+# Clean the Buildroot
+clean_buildroot() {
 	dbg "Cleaning Buildroot..."
 	make clean > /dev/null
+}
 
+# Make the config
+prepare_buildroot() {
 	dbg "Updating local config..."
 	make microroot_defconfig > /dev/null
 }
@@ -104,7 +101,7 @@ done
 # Detect manual clean command
 if [[ "$1" == "clean" ]]
 then
-	clean
+	clean_buildroot
 	exit 0
 fi
 
