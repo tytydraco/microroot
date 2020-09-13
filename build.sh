@@ -103,13 +103,6 @@ do
 	! command -v "$dep" &> /dev/null && err "Unable to locate dependency $dep. Exiting."
 done
 
-# Detect manual clean command
-if [[ "$1" == "clean" ]]
-then
-	clean_buildroot
-	exit 0
-fi
-
 prepare
 setup_buildroot
 enter_buildroot

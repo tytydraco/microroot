@@ -32,8 +32,7 @@ managers.
 ## Build Script Method
 MicroRoot comes with a build script to automate the build process of MicroRoot.
 Simply clone this repository and run the build script with `./build.sh`. The
-script will handle everything for you. Run `./build.sh clean` to run a `make clean`
-in the Buildroot directory.
+script will handle everything for you.
 
 ## Manual Method
 MicroRoot is built using [Buildroot](https://buildroot.org/), a tool for
