@@ -87,8 +87,13 @@ build() {
 	cd ..
 	local br_dir=`get_buildroot_name`
 
+	mkdir -p ./out/dist/
+	cp ./out/${br_dir}output/images/rootfs.tar.xz ./out/dist/
+	cp ./out/${br_dir}output/images/bzImage ./out/dist/
+
 	dbg "---------- FINISHED ----------"
-	dbg "./out/${br_dir}output/images/rootfs.tar.xz"
+	dbg "Root:	./out/dist/rootfs.tar.xz"
+	dbg "Kernel:	./out/dist/bzImage"
 	dbg "------------------------------"
 }
 
