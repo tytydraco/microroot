@@ -8,7 +8,6 @@ A lightweight glibc rootfs for containers.
 - Supports Linux Kernel 4.4.x and newer
 - Binutils v2.34
 - Built with GCC 10, Link Time Optimization and Graphite
-- No default init system
 - 1.6 MB compressed XZ tarball
 
 # Philosophy
