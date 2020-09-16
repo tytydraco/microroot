@@ -80,7 +80,7 @@ prepare_buildroot() {
 # Build the rootfs using Buildroot
 build() {
 	dbg "Building..."
-	make
+	make -j8
 
 	[[ $? -ne 0 ]] && err "Build failed. Exiting."
 
